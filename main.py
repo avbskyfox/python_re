@@ -3,7 +3,7 @@ import re
 
 def process(s):
     words = re.split(r' ', s)
-    for i in range(0, len(words))
+    for i in range(0, len(words)):
         if i < len(words) - 1 and words[i] == words[i+1]:
             words.pop(i)
     print(words)
