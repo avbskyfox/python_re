@@ -1,12 +1,18 @@
-s = 'qweqw ewq sad arq arq das rrq3 awae awae q rqawf wefq fwf ae fwwwf'
+import re
 
 
-def main():
-    words = s.split(r' ')
+def process(s):
+    words = re.split(r' ', s)
     for i, word in enumerate(words):
         if i < len(words) - 1 and words[i] == words[i+1]:
             words.pop(i)
     print(words)
+
+
+def main():
+    for i in range(0, 6):
+        with open(f'2test{i}.txt') as f:
+            process(f.read())
 
 
 if __name__ == '__main__':
