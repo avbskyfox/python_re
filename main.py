@@ -1,14 +1,12 @@
-import re
-
 s = 'qweqw ewq sad arq arq das rrq3 awae awae q rqawf wefq fwf ae fwwwf'
 
 
 def main():
-    patern = re.compile(r' ')
-    words = patern.split(s)
-    print(words)
+    words = s.split(r' ')
     for i, word in enumerate(words):
-        print(f'{i} {word}')
+        if i < len(words) - 1 and words[i] == words[i+1]:
+            words.pop(i)
+    print(words)
 
 
 if __name__ == '__main__':
